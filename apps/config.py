@@ -6,6 +6,8 @@ Copyright (c) 2019 - present AppSeed.us
 import os
 from decouple import config
 
+
+
 class Config(object):
 
     basedir = os.path.abspath(os.path.dirname(__file__))

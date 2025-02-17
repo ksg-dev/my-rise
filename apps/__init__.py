@@ -25,14 +25,15 @@ def register_blueprints(app):
 
 
 def configure_database(app):
+    db.init_app(app)
 
-    @app.before_first_request
-    def initialize_database():
-        db.create_all()
-
-    @app.teardown_request
-    def shutdown_session(exception=None):
-        db.session.remove()
+    # # @app.before_first_request
+    # def initialize_database():
+    #     db.create_all()
+    #
+    # @app.teardown_request
+    # def shutdown_session(exception=None):
+    #     db.session.remove()
 
 
 def create_app(config):
