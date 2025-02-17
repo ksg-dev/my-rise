@@ -67,7 +67,7 @@ class PasswordReset(FlaskForm):
 
 # Create a LoginForm to login existing users
 class LoginForm(FlaskForm):
-    email = StringField("Email", validators=[InputRequired()])
+    username = StringField("Username", validators=[InputRequired()])
     password = StringField("Password", validators=[InputRequired()])
     submit = SubmitField("Log In")
 

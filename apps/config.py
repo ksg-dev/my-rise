@@ -6,6 +6,7 @@ Copyright (c) 2019 - present AppSeed.us
 import os
 from decouple import config
 
+from sqlalchemy.orm import DeclarativeBase
 
 
 class Config(object):
@@ -48,3 +49,6 @@ config_dict = {
     'Production': ProductionConfig,
     'Debug': DebugConfig
 }
+
+class Base(DeclarativeBase):
+    pass

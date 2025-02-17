@@ -7,9 +7,10 @@ from flask import Flask
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 from importlib import import_module
+from apps.config import Base
 
 
-db = SQLAlchemy()
+db = SQLAlchemy(model_class=Base)
 login_manager = LoginManager()
 
 
@@ -25,7 +26,8 @@ def register_blueprints(app):
 
 
 def configure_database(app):
-    db.init_app(app)
+    with app.app_context():
+        db.create_all()
 
     # # @app.before_first_request
     # def initialize_database():

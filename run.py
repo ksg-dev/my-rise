@@ -7,7 +7,7 @@ from flask_migrate import Migrate
 from sys import exit
 from decouple import config
 
-from apps.config import config_dict
+from apps.config import config_dict, Base
 from apps import create_app, db
 
 # WARNING: Don't run with debug turned on in production!

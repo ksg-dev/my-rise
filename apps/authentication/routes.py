@@ -12,8 +12,8 @@ from flask_login import (
 
 from apps import db, login_manager
 from apps.authentication import blueprint
-from apps.authentication.forms import LoginForm, CreateAccountForm
-from apps.authentication.models import Users
+from apps.authentication.forms import LoginForm, RegisterForm
+from apps.authentication.modelsn import Users
 
 from apps.authentication.util import verify_pass
 
@@ -56,7 +56,7 @@ def login():
 
 @blueprint.route('/register', methods=['GET', 'POST'])
 def register():
-    create_account_form = CreateAccountForm(request.form)
+    create_account_form = RegisterForm(request.form)
     if 'register' in request.form:
 
         username = request.form['username']
