@@ -67,9 +67,8 @@ class Users(UserMixin, db.Model):
     __tablename__ = "users"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    email: Mapped[str] = mapped_column(String(100), unique=True)
     password: Mapped[str] = mapped_column(String(250))
-    name: Mapped[str] = mapped_column(String(1000))
+    username: Mapped[str] = mapped_column(String(1000))
     display_name: Mapped[str] = mapped_column(String(1000))
     # This will act like a List of Project/Course/Lib.etc objects attached to each User.
     # The "user" refers to the user property in the Project/Course/Lib. etc class.

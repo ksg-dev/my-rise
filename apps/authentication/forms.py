@@ -28,7 +28,7 @@ class RegisterForm(FlaskForm):
                             InputRequired()
                         ]
                         )
-    name = StringField("Username",
+    username = StringField("Username",
                        validators=[
                            InputRequired()
                        ]
